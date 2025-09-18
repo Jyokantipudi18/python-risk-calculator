@@ -15,14 +15,15 @@ jobs:
     # A job is a sequence of steps
     steps:
       # Step 1: Check out the code from the repository
-      - uses: actions/checkout@v4
-      - name: "Python Version Check"
-
-      # Step 2: Set up Python
-      - uses: actions/setup-python@v5
+      - name: "Checkout Code"
+        uses: actions/checkout@v4
+      
+      # Step 2: Set up Python and give the step a name
+      - name: "Setup Python"
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      # Step 3: Run your Python script to make sure it executes
+          
+      # Step 3: Run your Python script
       - name: "Run the Python script"
         run: python risk_calculator.py
