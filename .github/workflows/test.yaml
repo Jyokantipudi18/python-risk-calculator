@@ -1,0 +1,28 @@
+name: Python Checks
+
+# This workflow is triggered on every push to the main branch
+on:
+  push:
+    branches: [ "main" ]
+
+# A workflow is made of one or more jobs
+jobs:
+  # The "build" job
+  build:
+    # Runs on the latest version of Ubuntu
+    runs-on: ubuntu-latest
+
+    # A job is a sequence of steps
+    steps:
+      # Step 1: Check out the code from the repository
+      - uses: actions/checkout@v4
+      - name: "Python Version Check"
+
+      # Step 2: Set up Python
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Step 3: Run your Python script to make sure it executes
+      - name: "Run the Python script"
+        run: python risk_calculator.py
