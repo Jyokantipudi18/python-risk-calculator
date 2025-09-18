@@ -45,7 +45,7 @@ def calculate_total_risk(portfolio):
     return diversification_score
 if __name__=="__main__":
     print("Welcome to the simple portfolio risk calculator!")
-    my_portfolio = load_portfolio(r'C:\Users\jyoth\OneDrive\Desktop\DOCS\PYTHON\Riskportfolio\portfolio.csv')
+    my_portfolio = load_portfolio('portfolio.csv')
     print(my_portfolio)
     total_value = calculate_total_value(my_portfolio)
     total_risk = calculate_total_risk(my_portfolio)
